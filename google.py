@@ -5,7 +5,7 @@ import urllib.request
 
 from const import PROXY_SETTINGS
 
-DEBUG = True
+DEBUG = False
 logger = logging.getLogger(__name__)
 
 
