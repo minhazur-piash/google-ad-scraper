@@ -1,0 +1,10 @@
+[project]
+name = "ad-scraper"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.14"
+dependencies = [
+    "patchright>=1.59.1",
+    "playwright>=1.59.0",
+    "playwright-stealth>=2.0.3",
+]
