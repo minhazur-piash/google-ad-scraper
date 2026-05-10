@@ -34,7 +34,7 @@ def scrape(ad_center: AllowedAdCenter, domain_name: str, action: AllowedAction):
 
     if ad_center == AllowedAdCenter.FB:
         ad_link = f"https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=ALL&is_targeted_country=false&media_type=all&q={input_search}&search_type=keyword_unordered&sort_data[direction]=desc&sort_data[mode]=total_impressions&source=fb-logo"
-        ad_provider = FbAd
+        ad_provider = FbAd(slug=domain_name)
 
     if action == AllowedAction.GET_STATS:
         ad_provider.get_ad_stats(ad_link)
