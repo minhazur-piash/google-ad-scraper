@@ -18,10 +18,6 @@ class FbAd:
     def __init__(self, slug: str):
         self.slug = slug
 
-    @staticmethod
-    def _normalize(value: str) -> str:
-        return re.sub(r'[^a-z0-9]', '', (value or '').lower())
-
     def _matches_slug(self, advertiser_name: str) -> bool:
         return True
 
@@ -30,10 +26,7 @@ class FbAd:
             browser = p.chromium.launch(proxy=PROXY_SETTINGS, headless=False)
             page = browser.new_page()
             page.goto(ad_link, timeout=60000, wait_until='networkidle')
-            # if DEBUG:
-            # logger.info(page.locator('body').inner_html())
 
-            # Mark the grid that holds the ad cards (the second `display: grid` on the page).
             grid_count = page.evaluate("""
                                        () => {
                                            const grids = [...document.querySelectorAll('div')]
