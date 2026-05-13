@@ -1,8 +1,12 @@
 from enum import Enum
 import sys
 
+from dotenv import load_dotenv
+
 from fb import FbAd
 from google import GoogleAd
+
+load_dotenv()
 
 import logging
 
